@@ -1,0 +1,75 @@
+[package]
+name = "huione-gossip"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-gossip"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bincode = { workspace = true }
+bv = { workspace = true, features = ["serde"] }
+clap = { workspace = true }
+crossbeam-channel = { workspace = true }
+flate2 = { workspace = true }
+indexmap = { workspace = true, features = ["rayon"] }
+itertools = { workspace = true }
+log = { workspace = true }
+lru = { workspace = true }
+matches = { workspace = true }
+num-traits = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+rayon = { workspace = true }
+serde = { workspace = true }
+serde_bytes = { workspace = true }
+serde_derive = { workspace = true }
+huione-bloom = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-client = { workspace = true }
+huione-entry = { workspace = true }
+huione-frozen-abi = { workspace = true }
+huione-frozen-abi-macro = { workspace = true }
+huione-ledger = { workspace = true }
+huione-logger = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-perf = { workspace = true }
+huione-rayon-threadlimit = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+huione-thin-client = { workspace = true }
+huione-tpu-client = { workspace = true }
+huione-version = { workspace = true }
+huione-vote-program = { workspace = true }
+static_assertions = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+num_cpus = { workspace = true }
+regex = { workspace = true }
+serial_test = { workspace = true }
+
+[build-dependencies]
+rustc_version = { workspace = true }
+
+[[bench]]
+name = "crds"
+
+[[bench]]
+name = "crds_gossip_pull"
+
+[[bench]]
+name = "crds_shards"
+
+[[bin]]
+name = "huione-gossip"
+path = "src/main.rs"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

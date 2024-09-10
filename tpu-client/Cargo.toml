@@ -1,0 +1,41 @@
+[package]
+name = "huione-tpu-client"
+description = "Huione TPU Client"
+documentation = "https://docs.rs/huione-tpu-client"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+async-trait = { workspace = true }
+bincode = { workspace = true }
+futures-util = { workspace = true }
+indexmap = { workspace = true }
+indicatif = { workspace = true, optional = true }
+log = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+huione-connection-cache = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-pubsub-client = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-sdk = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+
+[dev-dependencies]
+rand_chacha = { workspace = true }
+
+[features]
+default = ["spinner"]
+# Support tpu-client methods that feature a spinner progress bar for
+# command-line interfaces
+spinner = ["dep:indicatif", "huione-rpc-client/spinner"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

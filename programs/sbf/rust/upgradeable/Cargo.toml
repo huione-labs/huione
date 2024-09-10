@@ -1,0 +1,20 @@
+[package]
+name = "huione-sbf-rust-upgradeable"
+documentation = "https://docs.rs/huione-sbf-rust-upgradeable"
+version = { workspace = true }
+description = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+huione-program = { workspace = true }
+
+[lib]
+name = "huione_sbf_rust_upgradeable"
+crate-type = ["cdylib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

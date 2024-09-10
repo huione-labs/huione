@@ -1,0 +1,40 @@
+[package]
+name = "huione-tokens"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-tokens"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+chrono = { workspace = true, features = ["default", "serde"] }
+clap = "2.33.0"
+console = { workspace = true }
+csv = { workspace = true }
+ctrlc = { workspace = true, features = ["termination"] }
+indexmap = { workspace = true }
+indicatif = { workspace = true }
+pickledb = { workspace = true, features = ["yaml"] }
+serde = { workspace = true, features = ["derive"] }
+huione-account-decoder = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-cli-config = { workspace = true }
+huione-remote-wallet = { workspace = true, features = ["default"] }
+huione-rpc-client = { workspace = true, features = ["default"] }
+huione-rpc-client-api = { workspace = true }
+huione-sdk = { workspace = true }
+huione-transaction-status = { workspace = true }
+huione-version = { workspace = true }
+hpl-associated-token-account = { workspace = true, features = ["no-entrypoint"] }
+hpl-token = { workspace = true, features = ["no-entrypoint"] }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+bincode = { workspace = true }
+huione-logger = { workspace = true }
+huione-streamer = { workspace = true }
+huione-test-validator = { workspace = true }

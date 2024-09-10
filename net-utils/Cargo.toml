@@ -1,0 +1,40 @@
+[package]
+name = "huione-net-utils"
+description = "HUIONE Network Utilities"
+documentation = "https://docs.rs/huione-net-utils"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bincode = { workspace = true }
+clap = { version = "3.1.5", features = ["cargo"] }
+crossbeam-channel = { workspace = true }
+log = { workspace = true }
+nix = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+serde_derive = { workspace = true }
+socket2 = { workspace = true }
+huione-logger = { workspace = true }
+huione-sdk = { workspace = true }
+huione-version = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+url = { workspace = true }
+
+[lib]
+name = "huione_net_utils"
+
+[[bin]]
+name = "huione-ip-address"
+path = "src/bin/ip_address.rs"
+
+[[bin]]
+name = "huione-ip-address-server"
+path = "src/bin/ip_address_server.rs"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

@@ -1,0 +1,38 @@
+[package]
+name = "huione-test-validator"
+description = "Blockchain, Rebuilt for Scale"
+readme = "../README.md"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+base64 = { workspace = true }
+bincode = { workspace = true }
+crossbeam-channel = { workspace = true }
+log = { workspace = true }
+serde_derive = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+huione-cli-output = { workspace = true }
+huione-client = { workspace = true }
+huione-core = { workspace = true }
+huione-geyser-plugin-manager = { workspace = true }
+huione-gossip = { workspace = true }
+huione-ledger = { workspace = true }
+huione-logger = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-program-test = { workspace = true }
+huione-rpc = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+huione-tpu-client = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

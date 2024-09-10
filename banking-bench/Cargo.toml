@@ -1,0 +1,32 @@
+[package]
+name = "huione-banking-bench"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+clap = { version = "3.1.8", features = ["derive"] }
+crossbeam-channel = { workspace = true }
+log = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+huione-client = { workspace = true }
+huione-core = { workspace = true }
+huione-gossip = { workspace = true }
+huione-ledger = { workspace = true }
+huione-logger = { workspace = true }
+huione-measure = { workspace = true }
+huione-perf = { workspace = true }
+huione-poh = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+huione-tpu-client = { workspace = true }
+huione-version = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

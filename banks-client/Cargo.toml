@@ -1,0 +1,32 @@
+[package]
+name = "huione-banks-client"
+description = "HUIONE banks client"
+documentation = "https://docs.rs/huione-banks-client"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+borsh = { workspace = true }
+futures = { workspace = true }
+huione-banks-interface = { workspace = true }
+huione-program = { workspace = true }
+huione-sdk = { workspace = true }
+tarpc = { workspace = true, features = ["full"] }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tokio-serde = { workspace = true, features = ["bincode"] }
+
+[dev-dependencies]
+huione-banks-server = { workspace = true }
+huione-runtime = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_banks_client"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

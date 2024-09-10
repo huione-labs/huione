@@ -1,0 +1,22 @@
+[package]
+name = "huione-accounts-bench"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+clap = { workspace = true }
+log = { workspace = true }
+rayon = { workspace = true }
+huione-logger = { workspace = true }
+huione-measure = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-version = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

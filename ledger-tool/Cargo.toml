@@ -1,0 +1,64 @@
+[package]
+name = "huione-ledger-tool"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-ledger-tool"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bs58 = { workspace = true }
+chrono = { workspace = true, features = ["default"] }
+clap = { workspace = true }
+crossbeam-channel = { workspace = true }
+csv = { workspace = true }
+dashmap = { workspace = true }
+futures = { workspace = true }
+histogram = { workspace = true }
+itertools = { workspace = true }
+log = { workspace = true }
+num_cpus = { workspace = true }
+regex = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+huione-account-decoder = { workspace = true }
+huione-bpf-loader-program = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-cli-output = { workspace = true }
+huione-core = { workspace = true }
+huione-entry = { workspace = true }
+huione-geyser-plugin-manager = { workspace = true }
+huione-gossip = { workspace = true }
+huione-ledger = { workspace = true }
+huione-logger = { workspace = true }
+huione-measure = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-rpc = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-stake-program = { workspace = true }
+huione-storage-bigtable = { workspace = true }
+huione-storage-hbase = { workspace = true }
+huione-streamer = { workspace = true }
+huione-transaction-status = { workspace = true }
+huione-version = { workspace = true }
+huione-vote-program = { workspace = true }
+huione_rbpf = { workspace = true, features = ["debugger"] }
+tokio = { workspace = true, features = ["full"] }
+ethnum = { workspace = true }
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+jemallocator = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+bytecount = { workspace = true }
+
+[target."cfg(unix)".dependencies]
+signal-hook = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

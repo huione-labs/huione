@@ -1,0 +1,33 @@
+[package]
+description = "HUIONE Program Test Framework"
+name = "huione-program-test"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+assert_matches = { workspace = true }
+async-trait = { workspace = true }
+base64 = { workspace = true }
+bincode = { workspace = true }
+chrono-humanize = { workspace = true }
+crossbeam-channel = { workspace = true }
+log = { workspace = true }
+serde = { workspace = true }
+huione-banks-client = { workspace = true }
+huione-banks-interface = { workspace = true }
+huione-banks-server = { workspace = true }
+huione-bpf-loader-program = { workspace = true }
+huione-logger = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-vote-program = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+
+[dev-dependencies]
+huione-stake-program = { workspace = true }

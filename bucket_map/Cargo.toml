@@ -1,0 +1,34 @@
+[package]
+name = "huione-bucket-map"
+description = "huione-bucket-map"
+documentation = "https://docs.rs/huione-bucket-map"
+readme = "../README.md"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bv = { workspace = true, features = ["serde"] }
+log = { workspace = true }
+memmap2 = { workspace = true }
+modular-bitfield = { workspace = true }
+num_enum = { workspace = true }
+rand = { workspace = true }
+huione-measure = { workspace = true }
+huione-sdk = { workspace = true }
+tempfile = { workspace = true }
+
+[dev-dependencies]
+fs_extra = { workspace = true }
+rayon = { workspace = true }
+huione-logger = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_bucket_map"
+
+[[bench]]
+name = "bucket_map"

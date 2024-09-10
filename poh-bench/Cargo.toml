@@ -1,0 +1,25 @@
+[package]
+name = "huione-poh-bench"
+documentation = "https://docs.rs/huione-poh-bench"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+clap = { version = "3.1.5", features = ["cargo"] }
+log = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+huione-entry = { workspace = true }
+huione-logger = { workspace = true }
+huione-measure = { workspace = true }
+huione-perf = { workspace = true }
+huione-sdk = { workspace = true }
+huione-version = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

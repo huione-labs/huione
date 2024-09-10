@@ -1,0 +1,16 @@
+[package]
+name = "huione-zk-token-proof-program-tests"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dev-dependencies]
+bytemuck = { workspace = true, features = ["derive"] }
+curve25519-dalek = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-program-test = { workspace = true }
+huione-sdk = { workspace = true }
+huione-zk-token-sdk = { workspace = true }

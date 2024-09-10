@@ -1,0 +1,40 @@
+[package]
+name = "huione-client-test"
+description = "HUIONE RPC Test"
+documentation = "https://docs.rs/huione-client-test"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+futures-util = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+huione-ledger = { workspace = true }
+huione-measure = { workspace = true }
+huione-merkle-tree = { workspace = true }
+huione-metrics = { workspace = true }
+huione-perf = { workspace = true }
+huione-pubsub-client = { workspace = true }
+huione-rayon-threadlimit = { workspace = true }
+huione-rpc = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+huione-test-validator = { workspace = true }
+huione-transaction-status = { workspace = true }
+huione-version = { workspace = true }
+systemstat = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tungstenite = { workspace = true, features = ["rustls-tls-webpki-roots"] }
+
+[dev-dependencies]
+huione-logger = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

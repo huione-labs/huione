@@ -1,0 +1,35 @@
+[package]
+name = "huione-account-decoder"
+description = "HUIONE account decoder"
+documentation = "https://docs.rs/huione-account-decoder"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+Inflector = { workspace = true }
+base64 = { workspace = true }
+bincode = { workspace = true }
+bs58 = { workspace = true }
+bv = { workspace = true }
+lazy_static = { workspace = true }
+serde = { workspace = true }
+serde_derive = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+huione-address-lookup-table-program = { workspace = true }
+huione-config-program =  { workspace = true }
+huione-sdk =  { workspace = true }
+huione-vote-program = { workspace = true }
+hpl-token = { workspace = true, features = ["no-entrypoint"] }
+hpl-nft = { workspace = true, features = ["no-entrypoint"] }
+hpl-name = { workspace = true, features = ["no-entrypoint"] }
+thiserror = { workspace = true }
+zstd = { workspace = true }
+borsh = { workspace = true }
+chrono = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

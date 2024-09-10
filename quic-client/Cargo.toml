@@ -1,0 +1,37 @@
+[package]
+name = "huione-quic-client"
+description = "Huione Quic Client"
+documentation = "https://docs.rs/huione-quic-client"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+async-mutex = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+itertools = { workspace = true }
+lazy_static = { workspace = true }
+log = { workspace = true }
+quinn = { workspace = true }
+quinn-proto = { workspace = true }
+quinn-udp = { workspace = true }
+rcgen = { workspace = true }
+rustls = { workspace = true, features = ["dangerous_configuration"] }
+huione-connection-cache = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+
+[dev-dependencies]
+crossbeam-channel = { workspace = true }
+huione-logger = { workspace = true }
+huione-perf = { workspace = true }

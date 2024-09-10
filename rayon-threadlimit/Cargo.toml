@@ -1,0 +1,18 @@
+[package]
+name = "huione-rayon-threadlimit"
+description = "huione-rayon-threadlimit"
+documentation = "https://docs.rs/huione-rayon-threadlimit"
+readme = "../README.md"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+lazy_static = { workspace = true }
+num_cpus = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

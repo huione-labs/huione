@@ -1,0 +1,46 @@
+[package]
+name = "huione-frozen-abi"
+description = "HUIONE Frozen ABI"
+documentation = "https://docs.rs/huione-frozen-abi"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bs58 = { workspace = true }
+bv = { workspace = true, features = ["serde"] }
+lazy_static = { workspace = true }
+log = { workspace = true, features = ["std"] }
+once_cell = { workspace = true }
+serde = { workspace = true, features = ["derive", "rc"] }
+serde_bytes = { workspace = true }
+serde_derive = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+sha2 = { workspace = true }
+huione-frozen-abi-macro = { workspace = true }
+thiserror = { workspace = true }
+
+[target.'cfg(not(target_os = "solana"))'.dependencies]
+ahash = { workspace = true }
+blake3 = { workspace = true, features = ["digest", "traits-preview"] }
+block-buffer = { workspace = true }
+byteorder = { workspace = true, features = ["i128"] }
+cc = { workspace = true, features = ["jobserver", "parallel"] }
+either = { workspace = true, features = ["use_std"] }
+generic-array = { workspace = true, features = ["serde", "more_lengths"] }
+getrandom = { workspace = true, features = ["dummy"] }
+im = { workspace = true, features = ["rayon", "serde"] }
+memmap2 = { workspace = true }
+once_cell = { workspace = true, features = ["alloc", "race"] }
+rand_core = { workspace = true, features = ["std"] }
+subtle = { workspace = true }
+portable-atomic = { workspace = true }
+
+[target.'cfg(not(target_os = "solana"))'.dev-dependencies]
+huione-logger = { workspace = true }
+
+[build-dependencies]
+rustc_version = { workspace = true }

@@ -1,0 +1,107 @@
+[package]
+name = "huione-core"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-core"
+readme = "../README.md"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[badges]
+codecov = { repository = "huione-labs/huione", branch = "master", service = "github" }
+
+[dependencies]
+base64 = { workspace = true }
+bincode = { workspace = true }
+bs58 = { workspace = true }
+chrono = { workspace = true, features = ["default", "serde"] }
+crossbeam-channel = { workspace = true }
+dashmap = { workspace = true, features = ["rayon", "raw-api"] }
+eager = { workspace = true }
+etcd-client = { workspace = true, features = ["tls"] }
+histogram = { workspace = true }
+itertools = { workspace = true }
+lazy_static = { workspace = true }
+log = { workspace = true }
+lru = { workspace = true }
+min-max-heap = { workspace = true }
+num_enum = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+rayon = { workspace = true }
+rolling-file = { workspace = true }
+serde = { workspace = true }
+serde_derive = { workspace = true }
+huione-address-lookup-table-program = { workspace = true }
+huione-bloom = { workspace = true }
+huione-client = { workspace = true }
+huione-entry = { workspace = true }
+huione-frozen-abi = { workspace = true }
+huione-frozen-abi-macro = { workspace = true }
+huione-geyser-plugin-manager = { workspace = true }
+huione-gossip = { workspace = true }
+huione-ledger = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-perf = { workspace = true }
+huione-poh = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-rayon-threadlimit = { workspace = true }
+huione-rpc = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-send-transaction-service = { workspace = true }
+huione-streamer = { workspace = true }
+huione-tpu-client = { workspace = true }
+huione-transaction-status = { workspace = true }
+huione-version = { workspace = true }
+huione-vote-program = { workspace = true }
+strum = { workspace = true, features = ["derive"] }
+strum_macros = { workspace = true }
+sys-info = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+trees = { workspace = true }
+
+[dev-dependencies]
+fs_extra = { workspace = true }
+matches = { workspace = true }
+raptorq = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+serial_test = { workspace = true }
+huione-logger = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-stake-program = { workspace = true }
+static_assertions = { workspace = true }
+systemstat = { workspace = true }
+test-case = { workspace = true }
+
+[target."cfg(unix)".dependencies]
+sysctl = { workspace = true }
+
+[build-dependencies]
+rustc_version = { workspace = true }
+
+[[bench]]
+name = "banking_stage"
+
+[[bench]]
+name = "cluster_info"
+
+[[bench]]
+name = "gen_keys"
+
+[[bench]]
+name = "sigverify_stage"
+
+[[bench]]
+name = "retransmit_stage"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

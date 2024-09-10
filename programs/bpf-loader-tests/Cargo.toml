@@ -1,0 +1,22 @@
+# This package only exists to avoid circular dependencies during cargo publish:
+# huione-bpf-loader-program -> huione-program-test -> huione-bpf-loader-program
+
+[package]
+name = "huione-bpf-loader-program-tests"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dev-dependencies]
+assert_matches = { workspace = true }
+bincode = { workspace = true }
+huione-bpf-loader-program = { workspace = true }
+huione-program-test = { workspace = true }
+huione-sdk = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

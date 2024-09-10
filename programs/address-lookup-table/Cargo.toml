@@ -1,0 +1,36 @@
+[package]
+name = "huione-address-lookup-table-program"
+description = "HUIONE address lookup table program"
+documentation = "https://docs.rs/huione-address-loookup-table-program"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bincode = { workspace = true }
+bytemuck = { workspace = true }
+log = { workspace = true }
+num-derive = { workspace = true }
+num-traits = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+huione-frozen-abi = { workspace = true }
+huione-frozen-abi-macro = { workspace = true }
+huione-program = { workspace = true }
+thiserror = { workspace = true }
+
+[target.'cfg(not(target_os = "solana"))'.dependencies]
+huione-program-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+
+[build-dependencies]
+rustc_version = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_address_lookup_table_program"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

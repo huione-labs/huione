@@ -1,0 +1,41 @@
+[package]
+name = "huione-dos"
+publish = false
+description = "Tool to send various requests to cluster in order to evaluate the effect on performance"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bincode = { workspace = true }
+clap = { version = "3.1.5", features = ["derive", "cargo"] }
+crossbeam-channel = { workspace = true }
+itertools = { workspace = true }
+log = { workspace = true }
+rand = { workspace = true }
+serde = { workspace = true }
+huione-bench-tps = { workspace = true }
+huione-client = { workspace = true }
+huione-core = { workspace = true }
+huione-faucet = { workspace = true }
+huione-gossip = { workspace = true }
+huione-logger = { workspace = true }
+huione-measure = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-perf = { workspace = true }
+huione-rpc = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+huione-tpu-client = { workspace = true }
+huione-version = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dev-dependencies]
+huione-local-cluster = { workspace = true }
+huione-thin-client = { workspace = true }

@@ -1,0 +1,19 @@
+[package]
+name = "huione-udp-client"
+description = "Huione UDP Client"
+documentation = "https://docs.rs/huione-udp-client"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+async-trait = { workspace = true }
+huione-connection-cache = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }

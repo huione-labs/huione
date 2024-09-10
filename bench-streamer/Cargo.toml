@@ -1,0 +1,19 @@
+[package]
+name = "huione-bench-streamer"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+clap = { version = "3.1.5", features = ["cargo"] }
+crossbeam-channel = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-streamer = { workspace = true }
+huione-version = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

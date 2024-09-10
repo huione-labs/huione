@@ -1,0 +1,93 @@
+[package]
+name = "huione-ledger"
+description = "HUIONE ledger"
+documentation = "https://docs.rs/huione-ledger"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+assert_matches = { workspace = true }
+bincode = { workspace = true }
+bitflags = { workspace = true }
+byteorder = { workspace = true }
+chrono = { workspace = true, features = ["default", "serde"] }
+chrono-humanize = { workspace = true }
+crossbeam-channel = { workspace = true }
+dashmap = { workspace = true, features = ["rayon", "raw-api"] }
+fs_extra = { workspace = true }
+futures = { workspace = true }
+itertools = { workspace = true }
+lazy_static = { workspace = true }
+libc = { workspace = true }
+log = { workspace = true }
+lru = { workspace = true }
+num_cpus = { workspace = true }
+num_enum = { workspace = true }
+prost = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+rayon = { workspace = true }
+reed-solomon-erasure = { workspace = true, features = ["simd-accel"] }
+scopeguard = { workspace = true }
+serde = { workspace = true }
+serde_bytes = { workspace = true }
+sha2 = { workspace = true }
+huione-account-decoder = { workspace = true }
+huione-bpf-loader-program = { workspace = true }
+huione-entry = { workspace = true }
+huione-frozen-abi = { workspace = true }
+huione-frozen-abi-macro = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-perf = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-rayon-threadlimit = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-stake-program = { workspace = true }
+huione-storage-bigtable = { workspace = true }
+huione-storage-hbase = { workspace = true }
+huione-storage-proto = { workspace = true }
+huione-transaction-status = { workspace = true }
+huione-vote-program = { workspace = true }
+hpl-token = { workspace = true, features = ["no-entrypoint"] }
+static_assertions = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tokio-stream = { workspace = true }
+trees = { workspace = true }
+
+[dependencies.rocksdb]
+# Avoid the vendored bzip2 within rocksdb-sys that can cause linker conflicts
+# when also using the bzip2 crate
+version = "0.21.0"
+default-features = false
+features = ["lz4"]
+
+[dev-dependencies]
+bs58 = { workspace = true }
+matches = { workspace = true }
+huione-account-decoder = { workspace = true }
+huione-logger = { workspace = true }
+test-case = { workspace = true }
+
+[build-dependencies]
+rustc_version = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_ledger"
+
+[[bench]]
+name = "sigverify_shreds"
+
+[[bench]]
+name = "blockstore"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

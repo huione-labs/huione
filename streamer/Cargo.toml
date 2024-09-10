@@ -1,0 +1,47 @@
+[package]
+name = "huione-streamer"
+description = "HUIONE Streamer"
+documentation = "https://docs.rs/huione-streamer"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+async-channel = { workspace = true }
+bytes = { workspace = true }
+crossbeam-channel = { workspace = true }
+futures-util = { workspace = true }
+histogram = { workspace = true }
+indexmap = { workspace = true }
+itertools = { workspace = true }
+libc = { workspace = true }
+log = { workspace = true }
+nix = { workspace = true }
+pem = { workspace = true }
+percentage = { workspace = true }
+pkcs8 = { workspace = true, features = ["alloc"] }
+quinn = { workspace = true }
+quinn-proto = { workspace = true }
+quinn-udp = { workspace = true }
+rand = { workspace = true }
+rcgen = { workspace = true }
+rustls = { workspace = true, features = ["dangerous_configuration"] }
+huione-metrics = { workspace = true }
+huione-perf = { workspace = true }
+huione-sdk = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+x509-parser = { workspace = true }
+
+[dev-dependencies]
+huione-logger = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_streamer"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

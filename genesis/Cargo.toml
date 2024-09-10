@@ -1,0 +1,40 @@
+[package]
+name = "huione-genesis"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-genesis"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+base64 = { workspace = true }
+bincode = { workspace = true }
+clap = { workspace = true }
+itertools = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"]  }
+serde_yaml = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-cli-config = { workspace = true }
+huione-entry = { workspace = true }
+huione-ledger = { workspace = true }
+huione-logger = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-stake-program = { workspace = true }
+huione-version = { workspace = true }
+huione-vote-program = { workspace = true }
+tempfile = { workspace = true }
+
+[[bin]]
+name = "huione-genesis"
+path = "src/main.rs"
+
+[lib]
+name = "huione_genesis"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

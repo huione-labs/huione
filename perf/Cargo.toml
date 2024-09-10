@@ -1,0 +1,51 @@
+[package]
+name = "huione-perf"
+description = "HUIONE Performance APIs"
+documentation = "https://docs.rs/huione-perf"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+ahash = { workspace = true }
+bincode = { workspace = true }
+bv = { workspace = true, features = ["serde"] }
+curve25519-dalek = { workspace = true }
+dlopen = { workspace = true }
+dlopen_derive = { workspace = true }
+fnv = { workspace = true }
+lazy_static = { workspace = true }
+log = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+serde = { workspace = true }
+huione-metrics = { workspace = true }
+huione-rayon-threadlimit = { workspace = true }
+huione-sdk = { workspace = true }
+huione-vote-program = { workspace = true }
+
+[target."cfg(target_os = \"linux\")".dependencies]
+caps = { workspace = true }
+libc = { workspace = true }
+nix = { workspace = true }
+
+[lib]
+name = "huione_perf"
+
+[dev-dependencies]
+matches = { workspace = true }
+rand_chacha = "0.2.2"
+huione-logger = { workspace = true }
+test-case = { workspace = true }
+
+[[bench]]
+name = "sigverify"
+
+[[bench]]
+name = "discard"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

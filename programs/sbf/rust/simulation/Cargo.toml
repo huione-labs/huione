@@ -1,0 +1,28 @@
+[package]
+name = "huione-sbf-rust-simulation"
+description = "Solana SBF Program Simulation Differences"
+documentation = "https://docs.rs/huione-sbf-rust-simulation"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[features]
+test-bpf = []
+
+[dependencies]
+huione-program = { workspace = true }
+
+[dev-dependencies]
+huione-logger = { workspace = true }
+huione-program-test = { workspace = true }
+huione-sdk = { workspace = true }
+huione-validator = { workspace = true }
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

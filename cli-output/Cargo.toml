@@ -1,0 +1,37 @@
+[package]
+name = "huione-cli-output"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-cli-output"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+Inflector = { workspace = true }
+base64 = { workspace = true }
+chrono = { workspace = true, features = ["default", "serde"] }
+clap = "2.33.0"
+console = { workspace = true }
+humantime = { workspace = true }
+indicatif = { workspace = true }
+pretty-hex = { workspace = true }
+semver = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"]  }
+huione-account-decoder = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-cli-config = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-sdk = { workspace = true }
+huione-transaction-status = { workspace = true }
+huione-vote-program = { workspace = true }
+hpl-memo = { workspace = true, features = ["no-entrypoint"] }
+
+[dev-dependencies]
+ed25519-dalek = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

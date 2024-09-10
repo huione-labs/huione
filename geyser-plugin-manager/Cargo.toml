@@ -1,0 +1,34 @@
+[package]
+name = "huione-geyser-plugin-manager"
+description = "The HUIONE Geyser plugin manager."
+documentation = "https://docs.rs/huione-geyser-plugin-manager"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+
+bs58 = { workspace = true }
+crossbeam-channel = { workspace = true }
+json5 = { workspace = true }
+jsonrpc-core = { workspace = true, features = ["arbitrary_precision"] }
+jsonrpc-server-utils = { workspace = true }
+libloading = { workspace = true }
+log = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"] }
+huione-entry = { workspace = true }
+huione-geyser-plugin-interface = { workspace = true }
+huione-ledger = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-rpc = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-transaction-status = { workspace = true }
+thiserror = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

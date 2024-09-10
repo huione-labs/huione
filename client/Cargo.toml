@@ -1,0 +1,44 @@
+[package]
+name = "huione-client"
+description = "Huione Client"
+documentation = "https://docs.rs/huione-client"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+async-trait = { workspace = true }
+bincode = { workspace = true }
+futures = { workspace = true }
+futures-util = { workspace = true }
+indexmap = { workspace = true }
+indicatif = { workspace = true }
+log = { workspace = true }
+quinn = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+huione-connection-cache = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-pubsub-client = { workspace = true }
+huione-quic-client = { workspace = true }
+huione-rpc-client = { workspace = true, features = ["default"] }
+huione-rpc-client-api = { workspace = true }
+huione-rpc-client-nonce-utils = { workspace = true }
+huione-sdk = { workspace = true }
+huione-streamer = { workspace = true }
+huione-thin-client = { workspace = true }
+huione-tpu-client = { workspace = true, features = ["default"] }
+huione-udp-client = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+
+[dev-dependencies]
+crossbeam-channel = { workspace = true }
+rand_chacha = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

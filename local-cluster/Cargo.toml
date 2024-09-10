@@ -1,0 +1,46 @@
+[package]
+name = "huione-local-cluster"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-local-cluster"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+crossbeam-channel = { workspace = true }
+itertools = { workspace = true }
+log = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+huione-client = { workspace = true }
+huione-config-program = { workspace = true }
+huione-core = { workspace = true }
+huione-entry = { workspace = true }
+huione-gossip = { workspace = true }
+huione-ledger = { workspace = true }
+huione-pubsub-client = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-stake-program = { workspace = true }
+huione-streamer = { workspace = true }
+huione-thin-client = { workspace = true }
+huione-tpu-client = { workspace = true }
+huione-vote-program = { workspace = true }
+tempfile = { workspace = true }
+trees = { workspace = true }
+
+[dev-dependencies]
+assert_matches = { workspace = true }
+fs_extra = { workspace = true }
+gag = { workspace = true }
+serial_test = { workspace = true }
+huione-download-utils = { workspace = true }
+huione-logger = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

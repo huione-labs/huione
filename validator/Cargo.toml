@@ -1,0 +1,78 @@
+[package]
+name = "huione-validator"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-validator"
+default-run = "huione-validator"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+chrono = { workspace = true, features = ["default", "serde"] }
+clap = { workspace = true }
+console = { workspace = true }
+core_affinity = { workspace = true }
+crossbeam-channel = { workspace = true }
+fd-lock = { workspace = true }
+indicatif = { workspace = true }
+itertools = { workspace = true }
+jsonrpc-core = { workspace = true, features = ["arbitrary_precision"] }
+jsonrpc-core-client = { workspace = true, features = ["ipc","arbitrary_precision"] }
+jsonrpc-derive = { workspace = true }
+jsonrpc-ipc-server = { workspace = true }
+jsonrpc-server-utils = { workspace = true }
+lazy_static = { workspace = true }
+libloading = { workspace = true }
+log = { workspace = true }
+num_cpus = { workspace = true }
+rand = { workspace = true }
+rayon = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true, features = ["arbitrary_precision"]  }
+serde_yaml = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-cli-config = { workspace = true }
+huione-core = { workspace = true }
+huione-download-utils = { workspace = true }
+huione-entry = { workspace = true }
+huione-faucet = { workspace = true }
+huione-genesis-utils = { workspace = true }
+huione-geyser-plugin-interface = { workspace = true }
+huione-geyser-plugin-manager = { workspace = true }
+huione-gossip = { workspace = true }
+huione-ledger = { workspace = true }
+huione-logger = { workspace = true }
+huione-metrics = { workspace = true }
+huione-net-utils = { workspace = true }
+huione-perf = { workspace = true }
+huione-poh = { workspace = true }
+huione-rpc = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-send-transaction-service = { workspace = true }
+huione-storage-bigtable = { workspace = true }
+huione-streamer = { workspace = true }
+huione-test-validator = { workspace = true }
+huione-tpu-client = { workspace = true }
+huione-version = { workspace = true }
+huione-vote-program = { workspace = true }
+symlink = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+huione-account-decoder = { workspace = true }
+
+[target.'cfg(not(target_env = "msvc"))'.dependencies]
+jemallocator = { workspace = true }
+
+[target."cfg(unix)".dependencies]
+libc = { workspace = true }
+signal-hook = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

@@ -1,0 +1,24 @@
+[package]
+name = "huione-genesis-utils"
+description = "HUIONE Genesis Utils"
+documentation = "https://docs.rs/huione-download-utils"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+log = { workspace = true }
+huione-download-utils = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_genesis_utils"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

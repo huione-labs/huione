@@ -1,0 +1,33 @@
+[package]
+name = "huione-bpf-loader-program"
+description = "HUIONE BPF loader"
+documentation = "https://docs.rs/huione-bpf-loader-program"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bincode = { workspace = true }
+byteorder = { workspace = true }
+libsecp256k1 = { workspace = true }
+log = { workspace = true }
+rand = { workspace = true }
+huione-measure = { workspace = true }
+huione-program-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+huione-zk-token-sdk = { workspace = true }
+huione_rbpf = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+memoffset = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_bpf_loader_program"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

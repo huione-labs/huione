@@ -1,0 +1,20 @@
+[package]
+name = "huione-cargo-test-sbf"
+description = "Execute all unit and integration tests after building with the Huione SBF SDK"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+cargo_metadata = { workspace = true }
+clap = { version = "3.1.5", features = ["cargo"] }
+log = { workspace = true, features = ["std"] }
+huione-logger = { workspace = true }
+
+[[bin]]
+name = "cargo-test-sbf"
+path = "src/main.rs"

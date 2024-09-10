@@ -1,0 +1,35 @@
+[package]
+name = "huione-cargo-build-sbf"
+description = "Compile a local package and all of its dependencies using the HUIONE BPF SDK"
+publish = false
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+bzip2 = { workspace = true }
+cargo_metadata = { workspace = true }
+clap = { version = "3.1.5", features = ["cargo", "env"] }
+log = { workspace = true, features = ["std"] }
+regex = { workspace = true }
+reqwest = { workspace = true, features = ["blocking", "rustls-tls"] }
+semver = { workspace = true }
+huione-download-utils = { workspace = true }
+huione-logger = { workspace = true }
+huione-sdk = { workspace = true }
+tar = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+predicates = { workspace = true }
+serial_test = { workspace = true }
+
+[features]
+program = []
+
+[[bin]]
+name = "cargo-build-sbf"
+path = "src/main.rs"

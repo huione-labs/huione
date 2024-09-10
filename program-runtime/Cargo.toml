@@ -1,0 +1,45 @@
+[package]
+name = "huione-program-runtime"
+description = "HUIONE program runtime"
+documentation = "https://docs.rs/huione-program-runtime"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+base64 = { workspace = true }
+bincode = { workspace = true }
+eager = { workspace = true }
+enum-iterator = { workspace = true }
+itertools = { workspace = true }
+libc = { workspace = true }
+log = { workspace = true }
+num-derive = { workspace = true }
+num-traits = { workspace = true }
+percentage = { workspace = true }
+rand = { workspace = true }
+serde = { version = "1.0.163", features = ["derive", "rc"] }
+huione-frozen-abi = { workspace = true }
+huione-frozen-abi-macro = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-sdk = { workspace = true }
+huione_rbpf = { workspace = true }
+thiserror = { workspace = true }
+ethnum = { workspace = true }
+
+[dev-dependencies]
+huione-logger = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_program_runtime"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[build-dependencies]
+rustc_version = { workspace = true }

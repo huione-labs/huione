@@ -1,0 +1,28 @@
+[package]
+name = "huione-watchtower"
+description = "Blockchain, Rebuilt for Scale"
+documentation = "https://docs.rs/huione-watchtower"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+clap = { workspace = true }
+humantime = { workspace = true }
+log = { workspace = true }
+huione-clap-utils = { workspace = true }
+huione-cli-config = { workspace = true }
+huione-cli-output = { workspace = true }
+huione-logger = { workspace = true }
+huione-metrics = { workspace = true }
+huione-notifier = { workspace = true }
+huione-rpc-client = { workspace = true }
+huione-rpc-client-api = { workspace = true }
+huione-sdk = { workspace = true }
+huione-version = { workspace = true }
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]

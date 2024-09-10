@@ -1,0 +1,39 @@
+[package]
+name = "huione-poh"
+description = "HUIONE PoH"
+documentation = "https://docs.rs/huione-poh"
+version = { workspace = true }
+authors = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+license = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+core_affinity = { workspace = true }
+crossbeam-channel = { workspace = true }
+log = { workspace = true }
+huione-entry = { workspace = true }
+huione-ledger = { workspace = true }
+huione-measure = { workspace = true }
+huione-metrics = { workspace = true }
+huione-runtime = { workspace = true }
+huione-sdk = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+bincode = { workspace = true }
+matches = { workspace = true }
+rand = { workspace = true }
+huione-logger = { workspace = true }
+huione-perf = { workspace = true }
+
+[lib]
+crate-type = ["lib"]
+name = "huione_poh"
+
+[[bench]]
+name = "poh"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
