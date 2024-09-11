@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://huione.com">
-    <img alt="HUIONE" src="https://i.imgur.com/IKyzQ6T.png" width="250" />
+    <img alt="HUIONE" src="https://pubchain-icon.xone.la/a6r9zz185xev3w9dgylbrwbcxi40v2wh.png" width="250" />
   </a>
 </p>
 
