@@ -397,7 +397,7 @@ impl From<InnerInstructions> for UiInnerInstructions {
     }
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct TransactionTokenBalance {
     pub account_index: u8,
     pub mint: String,
@@ -444,7 +444,7 @@ impl From<TransactionTokenBalance> for UiTransactionTokenBalance {
     }
 }
 
-#[derive(Clone, Debug, PartialEq)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct TransactionStatusMeta {
     pub status: TransactionResult<()>,
     pub fee: u128,

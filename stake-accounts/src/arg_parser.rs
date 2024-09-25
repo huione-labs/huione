@@ -160,7 +160,7 @@ where
                 .global(true)
                 .takes_value(true)
                 .value_name("URL")
-                .help("RPC entrypoint address. i.e. https://pubchain-rpc.xone.la"),
+                .help("RPC entrypoint address. i.e. https://rpc.huione.org"),
         )
         .subcommand(
             SubCommand::with_name("new")

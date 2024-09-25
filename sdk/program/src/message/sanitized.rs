@@ -1,6 +1,7 @@
 use {
     crate::{
         hash::Hash,
+        huione_program::{system_instruction::SystemInstruction, system_program},
         instruction::CompiledInstruction,
         message::{
             legacy,
@@ -12,14 +13,13 @@ use {
         program_utils::limited_deserialize,
         pubkey::Pubkey,
         sanitize::{Sanitize, SanitizeError},
-        huione_program::{system_instruction::SystemInstruction, system_program},
         sysvar::instructions::{BorrowedAccountMeta, BorrowedInstruction},
     },
     std::{borrow::Cow, convert::TryFrom},
     thiserror::Error,
 };
 
-#[derive(Debug, Clone, Eq, PartialEq)]
+#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub struct LegacyMessage<'a> {
     /// Legacy message
     pub message: Cow<'a, legacy::Message>,
@@ -66,7 +66,7 @@ impl<'a> LegacyMessage<'a> {
 }
 
 /// Sanitized message of a transaction.
-#[derive(Debug, Clone, Eq, PartialEq)]
+#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub enum SanitizedMessage {
     /// Sanitized legacy message
     Legacy(LegacyMessage<'static>),

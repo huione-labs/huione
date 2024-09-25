@@ -177,13 +177,13 @@ mod test {
     #[test]
     fn compute_websocket_url() {
         assert_eq!(
-            Config::compute_websocket_url("https://pubchain-rpc.xone.la"),
-            "ws://pubchain-rpc.xone.la/".to_string()
+            Config::compute_websocket_url("https://rpc.huione.org"),
+            "ws://rpc.huione.org/".to_string()
         );
 
         assert_eq!(
-            Config::compute_websocket_url("https://pubchain-rpc.xone.la"),
-            "wss://pubchain-rpc.xone.la/".to_string()
+            Config::compute_websocket_url("https://rpc.huione.org"),
+            "wss://rpc.huione.org/".to_string()
         );
 
         assert_eq!(

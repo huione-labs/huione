@@ -43,7 +43,7 @@ where
                 .global(true)
                 .validator(is_url_or_moniker)
                 .value_name("URL")
-                .help("RPC entrypoint address. i.e. https://pubchain-rpc.xone.la"),
+                .help("RPC entrypoint address. i.e. https://rpc.huione.org"),
         )
         .subcommand(
             SubCommand::with_name("distribute-tokens")

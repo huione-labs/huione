@@ -2863,9 +2863,9 @@ fn get_domain_encoded_account(
         Some(account) => {
             if is_known_name_id(account.owner()) {
                 let response = encode_account(&account, domain_account, encoding, data_slice)?;
-                if !check_domain_expired(&response.data) {
-                    return Ok(None);
-                }
+                // if !check_domain_expired(&response.data) {
+                //     return Ok(None);
+                // }
                 Ok(Some(response))
             } else {
                 info!("domain resolve account not exist");

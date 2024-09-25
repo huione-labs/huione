@@ -10,13 +10,15 @@ use {
 };
 use borsh::{BorshDeserialize};
 use chrono::{DateTime, Utc};
+use log::*;
 
 fn name_program_id() -> Pubkey {
     Pubkey::new_from_array(hpl_name::id().to_bytes())
 }
 
-// Check if the provided program id as a known SPL Token program id
+// Check if the provided program id as a known HPL Token program id
 pub fn is_known_name_id(program_id: &Pubkey) -> bool {
+    debug!("program_id:{:?}, domain program_id {:?}",*program_id,name_program_id());
     *program_id == name_program_id()
 }
 
@@ -33,15 +35,21 @@ pub fn parse_name(
                 .duration_since(UNIX_EPOCH)
                 .unwrap()
                 .as_secs() as i64;
-            if time_now > domain_account.expire_time {
-                return Err(ParseAccountError::AccountNotParsable(
-                    ParsableAccount::HplName,
-                ));
-            }
+
             let duration = Duration::from_secs(domain_account.expire_time as u64);
             let expired_time = DateTime::<Utc>::from(UNIX_EPOCH.add(duration));
             // Formats the combined date and time with the specified format string.
+
             let ui_expired_time = expired_time.format("%Y-%m-%d %H:%M:%S").to_string();
+            
+            // oa Expired domain names should also return details.
+            // if time_now > domain_account.expire_time {
+            //     debug!("domain_account.expire_time:{:?} - {:?}",domain_account.expire_time,ui_expired_time);
+            //     return Err(ParseAccountError::AccountNotParsable(
+            //         ParsableAccount::HplName,
+            //     ));
+            // }
+            
             Ok(NameAccountType::Domain(UiDomainAccount {
                 account_type: domain_account.account_type.to_string(),
                 account_state: domain_account.account_state.to_string(),

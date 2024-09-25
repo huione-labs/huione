@@ -209,7 +209,7 @@ where
 
 pub fn normalize_to_url_if_moniker<T: AsRef<str>>(url_or_moniker: T) -> String {
     match url_or_moniker.as_ref() {
-        "m" | "mainnet" => "https://pubchain-rpc.xone.la",
+        "m" | "mainnet" => "https://rpc.huione.org",
         "t" | "testnet" => "http://localhost:8899",
         "d" | "devnet" => "http://localhost:8899",
         "l" | "localhost" => "http://localhost:8899",

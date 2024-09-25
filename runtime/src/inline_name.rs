@@ -1,6 +1,6 @@
 use huione_sdk::pubkey::{Pubkey, PUBKEY_BYTES};
 
-huione_sdk::declare_id!("ErKyCbJc8qmPUvpWBQSTvyPFmvouD8Z1uekVP3N9HAuC");
+huione_sdk::declare_id!("DomJn7sam48AHBFyGyeDy2iRJ4JwGK8dqevDdf1gATxr");
 
 pub const DOMAIN_ACCOUNT_LENGTH: usize = 80;
 pub const DOMAIN_ACCOUNT_OWNER_OFFSET: usize = 34;

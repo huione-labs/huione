@@ -115,22 +115,22 @@ pub fn huione_log_64(arg1: u64, arg2: u64, arg3: u64, arg4: u64, arg5: u64) {
 /// Print 128-bit values represented as hexadecimal to the log.
 #[inline]
 pub fn huione_log_128(arg1: u64, arg2: u64, arg3: u64, arg4: u64, arg5: u64) {
-    #[cfg(target_arch = "bpf")]
+    #[cfg(target_os = "solana")]
     unsafe {
         sol_log_128_(arg1, arg2, arg3, arg4, arg5);
     }
 
-    #[cfg(not(target_arch = "bpf"))]
+    #[cfg(not(target_os = "solana"))]
     crate::program_stubs::sol_log_128(arg1, arg2, arg3, arg4, arg5);
 }
 
 
-#[cfg(target_arch = "bpf")]
+#[cfg(target_os = "solana")]
 extern "C" {
     fn sol_log_64_(arg1: u64, arg2: u64, arg3: u64, arg4: u64, arg5: u64);
 }
 
-#[cfg(target_arch = "bpf")]
+#[cfg(target_os = "solana")]
 extern "C" {
     fn sol_log_128_(arg1: u64, arg2: u64, arg3: u64, arg4: u64, arg5: u64);
 }

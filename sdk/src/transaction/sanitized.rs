@@ -5,6 +5,7 @@ use {
     super::SanitizedVersionedTransaction,
     crate::{
         hash::Hash,
+        huione_sdk::feature_set,
         message::{
             legacy,
             v0::{self, LoadedAddresses},
@@ -14,7 +15,6 @@ use {
         pubkey::Pubkey,
         sanitize::Sanitize,
         signature::Signature,
-        huione_sdk::feature_set,
         transaction::{Result, Transaction, TransactionError, VersionedTransaction},
     },
     huione_program::message::SanitizedVersionedMessage,
@@ -26,7 +26,7 @@ use {
 pub const MAX_TX_ACCOUNT_LOCKS: usize = 128;
 
 /// Sanitized transaction and the hash of its message
-#[derive(Debug, Clone, Eq, PartialEq)]
+#[derive(Debug, Clone, Eq, PartialEq, Serialize, Deserialize)]
 pub struct SanitizedTransaction {
     message: SanitizedMessage,
     message_hash: Hash,
@@ -156,7 +156,9 @@ impl SanitizedTransaction {
 
         let signatures = tx.signatures;
         let message = match tx.message {
-            VersionedMessage::Legacy(message) => SanitizedMessage::Legacy(LegacyMessage::new(message)),
+            VersionedMessage::Legacy(message) => {
+                SanitizedMessage::Legacy(LegacyMessage::new(message))
+            }
             VersionedMessage::V0(message) => {
                 SanitizedMessage::V0(v0::LoadedMessage::new(message, loaded_addresses))
             }

@@ -5120,7 +5120,8 @@ impl RpcClient {
             RpcRequest::GetDomainAccount,
             json!([domain_account.to_string(), config]),
         ).await;
-
+        // oa debug show response.
+        debug!("response:{:?}",response);
         response
             .map(|result_json: Value| {
                 if result_json.is_null() {

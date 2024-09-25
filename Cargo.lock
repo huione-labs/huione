@@ -2282,7 +2282,6 @@ name = "hpl-name"
 version = "1.0.0"
 dependencies = [
  "borsh 0.10.3",
- "hpl-sig",
  "huione-program",
  "lazy_static",
  "num-derive",
@@ -2302,18 +2301,6 @@ dependencies = [
  "num-traits",
  "num_enum 0.5.11",
  "shank",
- "thiserror",
-]
-
-[[package]]
-name = "hpl-sig"
-version = "1.0.0"
-dependencies = [
- "borsh 0.10.3",
- "huione-program",
- "lazy_static",
- "num-derive",
- "num-traits",
  "thiserror",
 ]
 
@@ -2383,6 +2370,7 @@ dependencies = [
  "huione-sdk",
  "huione-vote-program",
  "lazy_static",
+ "log",
  "serde",
  "serde_derive",
  "serde_json",
